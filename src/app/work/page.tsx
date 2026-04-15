@@ -146,6 +146,147 @@ const projects: Project[] = [
       { label: "Field Data", variant: "electric" },
     ],
   },
+  {
+    number: "07",
+    title: "Interactive Geospatial Index Analysis System",
+    client: "Independent R&D · Google Earth Engine",
+    url: null,
+    scale: "Cloud-Based Earth Observation",
+    live: false,
+    problem:
+      "Teams needing environmental indices (NDVI, NDWI, EVI, SAVI, soil moisture) for custom areas of interest had to stitch raw satellite tiles, reproject, and compute indices manually — far too slow for operational decision-making.",
+    solution:
+      "A web-based geospatial platform where users draw polygon boundaries on an interactive map and retrieve satellite imagery with on-demand indices overlaid inside the exact area. Backend processing runs on Google Earth Engine via Python for cloud-scale raster computation, with color-coded visualization and precise boundary clipping.",
+    impact:
+      "Real-time environmental index analysis at any scale. Supports precision agriculture, drought assessment, ecosystem monitoring, and smart-farming investment decisions.",
+    tags: [
+      { label: "Google Earth Engine", variant: "violet" },
+      { label: "Python", variant: "electric" },
+      { label: "NDVI / NDWI / EVI", variant: "violet" },
+      { label: "Leaflet", variant: "amber" },
+      { label: "Raster Analysis", variant: "electric" },
+    ],
+  },
+  {
+    number: "08",
+    title: "Aircraft Detection & Counting System",
+    client: "Independent R&D · Computer Vision",
+    url: null,
+    scale: "Object Detection · Satellite Imagery",
+    live: false,
+    problem:
+      "Counting aircraft across airports and airfields from satellite imagery was a manual exercise — slow, error-prone, and impractical for monitoring at scale or over time.",
+    solution:
+      "An automated pipeline that fetches high-resolution satellite imagery through the Google API for defined coordinates, runs an object detection model tuned to distinguish aircraft from buildings and ground vehicles, draws bounding boxes, and aggregates counts per tile and per region. Detections are georeferenced and plotted on a GIS platform for spatial validation.",
+    impact:
+      "Repeatable, automated aircraft counts across airfields. Foundation for temporal trend dashboards and airspace activity analytics.",
+    tags: [
+      { label: "Computer Vision", variant: "violet" },
+      { label: "Object Detection", variant: "violet" },
+      { label: "Python", variant: "electric" },
+      { label: "Google Satellite API", variant: "amber" },
+    ],
+  },
+  {
+    number: "09",
+    title: "3D GIS Flight Simulator & Movement Analysis",
+    client: "Independent R&D · Aviation Analytics",
+    url: null,
+    scale: "3D Geospatial Simulation",
+    live: false,
+    problem:
+      "Route planning and flight trajectory analysis typically happen in either flat 2D GIS or in closed flight-simulator environments disconnected from real-world geospatial data.",
+    solution:
+      "An interactive 3D flight simulator integrated directly into a GIS environment. Custom aircraft models designed in Blender are dropped into a georeferenced 3D scene. Users insert waypoint-based flight paths, play back movement with pause/resume controls, and measure distance, altitude, and live coordinates along the trajectory.",
+    impact:
+      "Enables aviation route planning, pilot training simulation, drone trajectory evaluation, and airspace spatial analytics — inside a single 3D GIS workspace.",
+    tags: [
+      { label: "3D GIS", variant: "violet" },
+      { label: "Blender", variant: "amber" },
+      { label: "CesiumJS", variant: "electric" },
+      { label: "Three.js", variant: "electric" },
+    ],
+  },
+  {
+    number: "10",
+    title: "Spatial Data Warehouses — Rural District Councils",
+    client: "Zimbabwe Resilience Building Fund (ZRBF)",
+    url: null,
+    scale: "10+ Districts · Enterprise Geospatial Infrastructure",
+    live: false,
+    problem:
+      "Rural District Councils managed climate, agriculture, hydrology, and infrastructure data in siloed formats — blocking coordinated disaster preparedness and evidence-based planning at the district level.",
+    solution:
+      "Enterprise-grade Spatial Data Warehouses deployed across more than ten Rural District Councils. Centralized geospatial repositories integrating cadastral data, agricultural zones, hydrology, infrastructure, socio-economic indicators, and climate risk datasets. Stack: PostgreSQL/PostGIS, GeoServer (WMS/WFS), and web-based GIS planning interfaces, alongside training and governance frameworks.",
+    impact:
+      "Standardized spatial data governance across districts. Real-time querying for drought, flood, and livelihood vulnerability. Eliminated siloed GIS environments and built local technical capacity.",
+    tags: [
+      { label: "PostgreSQL / PostGIS", variant: "electric" },
+      { label: "GeoServer", variant: "violet" },
+      { label: "WMS / WFS", variant: "violet" },
+      { label: "Web GIS", variant: "amber" },
+    ],
+  },
+  {
+    number: "11",
+    title: "Spatially Enabled COVID-19 Response Dashboard",
+    client: "Ministry of Health and Child Care — Zimbabwe",
+    url: null,
+    scale: "National Public Health · Pandemic Response",
+    live: false,
+    problem:
+      "During peak pandemic response, national health teams needed a unified spatial view of cases, testing centres, isolation facilities, and hospital capacity — data that lived in disconnected spreadsheets and siloed systems.",
+    solution:
+      "A real-time spatially enabled COVID-19 dashboard built with Django, GeoServer, and OpenLayers. Integrated epidemiological data, testing centres, isolation facilities, hospital capacity, and district-level case statistics into one interactive geospatial platform with live case mapping, hotspot detection, temporal trend visualization, and facility capacity monitoring.",
+    impact:
+      "Supported national-level decision making, rapid response team deployment, and vaccination planning. Demonstrated the role of spatial analytics in public health emergency management.",
+    tags: [
+      { label: "Django", variant: "electric" },
+      { label: "GeoServer", variant: "violet" },
+      { label: "OpenLayers", variant: "violet" },
+      { label: "PostGIS", variant: "electric" },
+    ],
+  },
+  {
+    number: "12",
+    title: "LULC Change Impact on River Turbidity",
+    client: "Applied Research · Watershed Analytics",
+    url: null,
+    scale: "Remote Sensing · Hydrological Modeling",
+    live: false,
+    problem:
+      "Watershed managers lacked quantified evidence linking upstream land use change — agricultural expansion, deforestation, settlement growth — to downstream river turbidity and sediment load.",
+    solution:
+      "A spatial-temporal study combining multi-temporal satellite imagery, supervised LULC classification, change detection, watershed and buffer delineation, and spatial regression. Correlated land transformation patterns with in-situ turbidity measurements across selected catchments.",
+    impact:
+      "Actionable watershed insights for environmental policy and sustainable land planning. Reinforced the link between spatial decision-making and ecological conservation.",
+    tags: [
+      { label: "Remote Sensing", variant: "violet" },
+      { label: "Supervised Classification", variant: "electric" },
+      { label: "GIS Hydrology", variant: "violet" },
+      { label: "Spatial Regression", variant: "electric" },
+    ],
+  },
+  {
+    number: "13",
+    title: "Active OpenStreetMap Contributor",
+    client: "OpenStreetMap Community",
+    url: "https://www.openstreetmap.org",
+    scale: "Zimbabwe · Sub-Saharan Africa",
+    live: true,
+    problem:
+      "Large swathes of rural Zimbabwe and broader African regions remain underrepresented in open spatial datasets — limiting navigation, planning, and humanitarian response in the communities that need it most.",
+    solution:
+      "Ongoing contributions to OpenStreetMap: digitization of rural infrastructure (roads, schools, clinics), mapping of underserved and disaster-prone communities, validation and correction of spatial datasets, and participation in humanitarian mapping campaigns.",
+    impact:
+      "Strengthens open-data ecosystems, improves navigation and planning datasets, and supports community-driven geospatial intelligence across the region.",
+    tags: [
+      { label: "OpenStreetMap", variant: "violet" },
+      { label: "iD Editor", variant: "electric" },
+      { label: "JOSM", variant: "electric" },
+      { label: "Humanitarian Mapping", variant: "amber" },
+    ],
+  },
 ]
 
 /* ── Live indicator dot ─────────────────────────────── */
@@ -198,6 +339,11 @@ export default function WorkPage() {
   const pairA = projects.slice(1, 3)
   const wide = projects[3]
   const pairB = projects.slice(4, 6)
+  const wide2 = projects[6]
+  const pairC = projects.slice(7, 9)
+  const wide3 = projects[9]
+  const pairD = projects.slice(10, 12)
+  const wide4 = projects[12]
 
   return (
     <div>
@@ -454,6 +600,311 @@ export default function WorkPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* ── Wide card — project 07 (GEE flagship) ──── */}
+          <ScrollReveal>
+            <article
+              className="group bg-surface-elevated rounded-[24px] p-8 md:p-12
+                hover:shadow-[0_0_80px_rgba(124,58,255,0.08)] transition-all duration-500"
+            >
+              <CardHeader project={wide2} />
+
+              <div className="grid grid-cols-1 md:grid-cols-[1.3fr,1fr] gap-8 md:gap-16 mt-8">
+                <div className="space-y-3">
+                  <h2 className="font-display font-bold text-3xl md:text-5xl text-fg tracking-tight leading-[1.05]">
+                    {wide2.title}
+                  </h2>
+                  <p className="font-mono text-[11px] text-electric/70">
+                    {wide2.scale}
+                  </p>
+                </div>
+                <div className="space-y-5 md:pt-2">
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      The Challenge
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide2.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      What I Built
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide2.solution}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-bg rounded-[16px] p-5 md:p-6 mt-8 mb-6">
+                <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-2">
+                  Impact
+                </p>
+                <p className="text-fg font-display font-medium text-base md:text-lg leading-relaxed tracking-tight">
+                  {wide2.impact}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap gap-1.5 flex-1">
+                  {wide2.tags.map((t) => (
+                    <StackTag
+                      key={t.label}
+                      label={t.label}
+                      variant={t.variant}
+                    />
+                  ))}
+                </div>
+                {wide2.url && <VisitLink url={wide2.url} />}
+              </div>
+            </article>
+          </ScrollReveal>
+
+          {/* ── Grid pair C — projects 08 & 09 ─────────── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {pairC.map((p, i) => (
+              <ScrollReveal key={p.number} delay={(i + 1) * 0.1}>
+                <article
+                  className="group bg-surface-elevated rounded-[24px] p-8 md:p-10 h-full flex flex-col
+                    hover:shadow-[0_0_48px_rgba(124,58,255,0.06)] transition-all duration-500"
+                >
+                  <CardHeader project={p} />
+
+                  <h3 className="font-display font-bold text-2xl md:text-3xl text-fg tracking-tight leading-tight mt-5 mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="font-mono text-[11px] text-electric/70 mb-5">
+                    {p.scale}
+                  </p>
+
+                  <div className="space-y-4 mb-5 flex-1">
+                    <div>
+                      <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                        The Challenge
+                      </p>
+                      <p className="text-sm text-fg-muted leading-relaxed">
+                        {p.problem}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                        What I Built
+                      </p>
+                      <p className="text-sm text-fg-muted leading-relaxed">
+                        {p.solution}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-bg rounded-[16px] p-4 md:p-5 mb-5">
+                    <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-1.5">
+                      Impact
+                    </p>
+                    <p className="text-fg font-display font-medium text-sm md:text-base leading-relaxed tracking-tight">
+                      {p.impact}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {p.tags.map((t) => (
+                      <StackTag
+                        key={t.label}
+                        label={t.label}
+                        variant={t.variant}
+                      />
+                    ))}
+                  </div>
+
+                  {p.url && <VisitLink url={p.url} />}
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* ── Wide card — project 10 (ZRBF) ──────────── */}
+          <ScrollReveal>
+            <article
+              className="group bg-surface-elevated rounded-[24px] p-8 md:p-12
+                hover:shadow-[0_0_80px_rgba(124,58,255,0.08)] transition-all duration-500"
+            >
+              <CardHeader project={wide3} />
+
+              <div className="grid grid-cols-1 md:grid-cols-[1.3fr,1fr] gap-8 md:gap-16 mt-8">
+                <div className="space-y-3">
+                  <h2 className="font-display font-bold text-3xl md:text-5xl text-fg tracking-tight leading-[1.05]">
+                    {wide3.title}
+                  </h2>
+                  <p className="font-mono text-[11px] text-electric/70">
+                    {wide3.scale}
+                  </p>
+                </div>
+                <div className="space-y-5 md:pt-2">
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      The Challenge
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide3.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      What I Built
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide3.solution}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-bg rounded-[16px] p-5 md:p-6 mt-8 mb-6">
+                <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-2">
+                  Impact
+                </p>
+                <p className="text-fg font-display font-medium text-base md:text-lg leading-relaxed tracking-tight">
+                  {wide3.impact}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap gap-1.5 flex-1">
+                  {wide3.tags.map((t) => (
+                    <StackTag
+                      key={t.label}
+                      label={t.label}
+                      variant={t.variant}
+                    />
+                  ))}
+                </div>
+                {wide3.url && <VisitLink url={wide3.url} />}
+              </div>
+            </article>
+          </ScrollReveal>
+
+          {/* ── Grid pair D — projects 11 & 12 ─────────── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {pairD.map((p, i) => (
+              <ScrollReveal key={p.number} delay={(i + 1) * 0.1}>
+                <article
+                  className="group bg-surface-elevated rounded-[24px] p-8 md:p-10 h-full flex flex-col
+                    hover:shadow-[0_0_48px_rgba(124,58,255,0.06)] transition-all duration-500"
+                >
+                  <CardHeader project={p} />
+
+                  <h3 className="font-display font-bold text-2xl md:text-3xl text-fg tracking-tight leading-tight mt-5 mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="font-mono text-[11px] text-electric/70 mb-5">
+                    {p.scale}
+                  </p>
+
+                  <div className="space-y-4 mb-5 flex-1">
+                    <div>
+                      <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                        The Challenge
+                      </p>
+                      <p className="text-sm text-fg-muted leading-relaxed">
+                        {p.problem}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                        What I Built
+                      </p>
+                      <p className="text-sm text-fg-muted leading-relaxed">
+                        {p.solution}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-bg rounded-[16px] p-4 md:p-5 mb-5">
+                    <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-1.5">
+                      Impact
+                    </p>
+                    <p className="text-fg font-display font-medium text-sm md:text-base leading-relaxed tracking-tight">
+                      {p.impact}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {p.tags.map((t) => (
+                      <StackTag
+                        key={t.label}
+                        label={t.label}
+                        variant={t.variant}
+                      />
+                    ))}
+                  </div>
+
+                  {p.url && <VisitLink url={p.url} />}
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* ── Wide card — project 13 (OSM) ───────────── */}
+          <ScrollReveal>
+            <article
+              className="group bg-surface-elevated rounded-[24px] p-8 md:p-12
+                hover:shadow-[0_0_80px_rgba(124,58,255,0.08)] transition-all duration-500"
+            >
+              <CardHeader project={wide4} />
+
+              <div className="grid grid-cols-1 md:grid-cols-[1.3fr,1fr] gap-8 md:gap-16 mt-8">
+                <div className="space-y-3">
+                  <h2 className="font-display font-bold text-3xl md:text-5xl text-fg tracking-tight leading-[1.05]">
+                    {wide4.title}
+                  </h2>
+                  <p className="font-mono text-[11px] text-electric/70">
+                    {wide4.scale}
+                  </p>
+                </div>
+                <div className="space-y-5 md:pt-2">
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      The Challenge
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide4.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
+                      What I Built
+                    </p>
+                    <p className="text-sm text-fg-muted leading-relaxed">
+                      {wide4.solution}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-bg rounded-[16px] p-5 md:p-6 mt-8 mb-6">
+                <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-2">
+                  Impact
+                </p>
+                <p className="text-fg font-display font-medium text-base md:text-lg leading-relaxed tracking-tight">
+                  {wide4.impact}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap gap-1.5 flex-1">
+                  {wide4.tags.map((t) => (
+                    <StackTag
+                      key={t.label}
+                      label={t.label}
+                      variant={t.variant}
+                    />
+                  ))}
+                </div>
+                {wide4.url && <VisitLink url={wide4.url} />}
+              </div>
+            </article>
+          </ScrollReveal>
         </div>
       </section>
 
