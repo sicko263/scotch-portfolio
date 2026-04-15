@@ -46,6 +46,34 @@ const PROJECTS = [
     lng: 29.8,
     color: "#06D6F0",
   },
+  {
+    name: "ZRBF Spatial Data Warehouses",
+    desc: "10+ Rural District Councils · Climate resilience",
+    lat: -18.92,
+    lng: 29.82,
+    color: "#7C3AFF",
+  },
+  {
+    name: "COVID-19 Response Dashboard",
+    desc: "Ministry of Health and Child Care · National",
+    lat: -17.82,
+    lng: 31.045,
+    color: "#FF9F0A",
+  },
+  {
+    name: "LULC Change & River Turbidity",
+    desc: "Remote sensing · Watershed analytics",
+    lat: -18.2,
+    lng: 31.6,
+    color: "#06D6F0",
+  },
+  {
+    name: "OpenStreetMap — Active Contributor",
+    desc: "Zimbabwe · Humanitarian mapping",
+    lat: -19.0154,
+    lng: 29.1549,
+    color: "#7C3AFF",
+  },
 ]
 
 function makeIcon(L: typeof import("leaflet"), color: string) {
