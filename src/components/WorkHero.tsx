@@ -17,22 +17,20 @@ const stats = [
 export default function WorkHero() {
   return (
     <section className="relative pt-32 pb-12 md:pt-44 md:pb-20 overflow-hidden">
-      {/* ─── 3D Terrain ── */}
-      <div
-        className="absolute pointer-events-none hidden md:block"
-        style={{ top: "-60px", right: "-60px", width: "min(600px, 55vw)", height: "520px", opacity: 1 }}
-      >
+      {/* ─── 3D Terrain — full background ── */}
+      <div className="absolute inset-0 pointer-events-none">
         <TerrainScene />
       </div>
 
-      {/* Right-side fade so terrain blends into bg */}
+      {/* Left-side vignette keeps text readable */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(7,8,15,1) 22%, rgba(7,8,15,0.3) 55%, rgba(7,8,15,0) 100%)",
+            "linear-gradient(to right, rgba(7,8,15,0.92) 0%, rgba(7,8,15,0.65) 40%, rgba(7,8,15,0.15) 80%, rgba(7,8,15,0) 100%)",
         }}
       />
+      {/* Bottom fade into page */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent, #07080F)" }}

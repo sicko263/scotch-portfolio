@@ -98,7 +98,7 @@ function Terrain() {
 export default function TerrainScene() {
   return (
     <Canvas
-      camera={{ position: [0, 5, 8], fov: 40 }}
+      camera={{ position: [0, 4.5, 9], fov: 62 }}
       gl={{ antialias: true, alpha: true }}
       style={{ background: "transparent" }}
     >
