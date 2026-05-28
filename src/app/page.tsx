@@ -576,7 +576,7 @@ export default function Home() {
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
                   </span>
                   <span className="font-mono text-[11px] text-fg-muted-on-light tracking-wide">
-                    Responds within 48 hours · scotch@ajison.com
+                    Responds within 48 hours · sajison71@gmail.com
                   </span>
                 </div>
               </div>

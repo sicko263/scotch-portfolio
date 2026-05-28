@@ -6,8 +6,10 @@ type FormState = "idle" | "submitting" | "success" | "error"
 
 export default function ContactForm() {
   const [state, setState] = useState<FormState>("idle")
+  const [errorMsg, setErrorMsg] = useState("")
   const [form, setForm] = useState({
     name: "",
+    email: "",
     organization: "",
     projectType: "",
     budget: "",
@@ -26,10 +28,28 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setState("submitting")
+    setErrorMsg("")
 
-    // TODO: Wire up to Resend or Formspree
-    await new Promise((r) => setTimeout(r, 1200))
-    setState("success")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setErrorMsg(data.error ?? "Something went wrong. Please try again.")
+        setState("error")
+        return
+      }
+
+      setState("success")
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.")
+      setState("error")
+    }
   }
 
   if (state === "success") {
@@ -45,11 +65,10 @@ export default function ContactForm() {
           </p>
         </div>
         <h3 className="font-display font-bold text-2xl text-fg tracking-tight">
-          I'll be in touch.
+          I&apos;ll be in touch.
         </h3>
         <p className="text-fg-muted text-sm leading-relaxed max-w-md">
-          Thank you for reaching out. I'll review your inquiry and
-          respond within 48 hours.
+          Thank you for reaching out. I&apos;ll review your inquiry and respond within 48 hours.
         </p>
       </div>
     )
@@ -74,18 +93,33 @@ export default function ContactForm() {
         </div>
         <div className="space-y-2">
           <label className="font-mono text-[11px] text-fg-subtle tracking-[0.1em]">
-            Organization <span className="text-violet/50">*</span>
+            Email <span className="text-violet/50">*</span>
           </label>
           <input
-            type="text"
-            name="organization"
+            type="email"
+            name="email"
             required
-            placeholder="Company or institution"
-            value={form.organization}
+            placeholder="your@email.com"
+            value={form.email}
             onChange={handleChange}
             className={inputClass}
           />
         </div>
+      </div>
+
+      <div className="space-y-2">
+        <label className="font-mono text-[11px] text-fg-subtle tracking-[0.1em]">
+          Organization <span className="text-violet/50">*</span>
+        </label>
+        <input
+          type="text"
+          name="organization"
+          required
+          placeholder="Company or institution"
+          value={form.organization}
+          onChange={handleChange}
+          className={inputClass}
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
@@ -142,7 +176,11 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="pt-4">
+      {state === "error" && (
+        <p className="font-mono text-[11px] text-error tracking-wide">{errorMsg}</p>
+      )}
+
+      <div className="pt-2">
         <button
           type="submit"
           disabled={state === "submitting"}
@@ -151,7 +189,7 @@ export default function ContactForm() {
             disabled:opacity-60 disabled:cursor-not-allowed
             transition-all duration-200"
         >
-          {state === "submitting" ? "Sending..." : "Send Inquiry →"}
+          {state === "submitting" ? "Sending…" : "Send Inquiry →"}
         </button>
       </div>
     </form>

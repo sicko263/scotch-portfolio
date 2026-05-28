@@ -78,10 +78,10 @@ export default function ContactPage() {
                         Email
                       </p>
                       <a
-                        href="mailto:scotch@ajison.com"
+                        href="mailto:sajison71@gmail.com"
                         className="group flex items-center gap-2 text-fg hover:text-electric transition-colors font-medium"
                       >
-                        scotch@ajison.com
+                        sajison71@gmail.com
                         <span className="text-fg-subtle group-hover:text-electric transition-colors text-xs">
                           →
                         </span>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         LinkedIn
                       </p>
                       <a
-                        href="https://linkedin.com/in/scotchajison"
+                        href="https://www.linkedin.com/in/scotch-ajison-b16253229"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center gap-2 text-fg hover:text-electric transition-colors font-medium"
