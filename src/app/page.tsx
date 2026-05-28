@@ -172,9 +172,9 @@ export default function Home() {
                 About
               </p>
               <blockquote className="font-display font-bold text-2xl md:text-3xl text-fg-on-light tracking-tight leading-[1.2]">
-                &ldquo;Almost every problem — land rights, flood mapping,
-                mortgage lending — has a geography to it. If you can see it
-                spatially, you can solve it faster.&rdquo;
+                &ldquo;Almost every problem — land rights, mortgage lending,
+                investment solutions — has a spatial intelligence to it. If you
+                can see it spatially, you can solve it faster.&rdquo;
               </blockquote>
               <p className="font-mono text-[11px] text-fg-muted-on-light tracking-wider mt-4">
                 — Scotch Ajison, GIS Systems Developer, Harare
