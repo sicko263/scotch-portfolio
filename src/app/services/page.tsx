@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import ScrollReveal from "@/components/ScrollReveal"
+import SpatialGrid from "@/components/three/SpatialGridWrapper"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -85,9 +86,30 @@ const engagementModels = [
 export default function ServicesPage() {
   return (
     <>
-      {/* ─── HEADER ── Dark section ──────────────────────── */}
-      <section className="pt-32 md:pt-40 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ─── HEADER ── Dark section with 3D grid ─────────── */}
+      <section className="relative pt-32 md:pt-40 pb-20 overflow-hidden">
+        {/* 3D Spatial Grid */}
+        <div
+          className="absolute pointer-events-none"
+          style={{ bottom: "-80px", right: "-80px", width: "580px", height: "480px", opacity: 0.7 }}
+        >
+          <SpatialGrid />
+        </div>
+
+        {/* Fade so grid blends */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(7,8,15,1) 40%, rgba(7,8,15,0.5) 70%, rgba(7,8,15,0.15) 100%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #07080F)" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-6">
               Services
@@ -118,7 +140,6 @@ export default function ServicesPage() {
                 }`}
               >
                 <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16">
-                  {/* Left — identity + description */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <span className="font-mono text-sm text-violet font-medium">
@@ -134,7 +155,6 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  {/* Right — deliverables + audience */}
                   <div className="space-y-8 md:pt-8">
                     <div className="space-y-3">
                       <p className="font-mono text-[11px] text-fg-muted-on-light tracking-wider uppercase">
@@ -171,7 +191,6 @@ export default function ServicesPage() {
       {/* ─── ENGAGEMENT + CTA ── Dark section ────────────── */}
       <section className="py-28 md:py-36">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Engagement model */}
           <ScrollReveal>
             <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-10">
               Engagement Model
@@ -193,7 +212,6 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          {/* CTA */}
           <ScrollReveal>
             <div className="mt-24 md:mt-32 text-center space-y-5">
               <h2 className="font-display font-bold text-3xl md:text-5xl text-fg tracking-tight leading-tight">
@@ -206,7 +224,8 @@ export default function ServicesPage() {
                 <Link
                   href="/contact"
                   className="inline-block bg-amber text-black font-display font-bold text-sm px-8 py-4 rounded-full
-                    hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+                    hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200
+                    shadow-[0_0_24px_rgba(255,159,10,0.25)]"
                 >
                   Start a Conversation
                 </Link>

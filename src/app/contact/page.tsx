@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import ScrollReveal from "@/components/ScrollReveal"
 import ContactForm from "@/components/ContactForm"
+import ContactGlobe from "@/components/three/ContactGlobeWrapper"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,8 +22,28 @@ export default function ContactPage() {
   return (
     <>
       {/* ─── HEADER ── Dark section ──────────────────────── */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+        {/* 3D Globe */}
+        <div
+          className="absolute pointer-events-none hidden md:block"
+          style={{ top: "-20px", right: "80px", width: "420px", height: "420px", opacity: 0.75 }}
+        >
+          <ContactGlobe />
+        </div>
+
+        <div
+          className="absolute inset-0 pointer-events-none hidden md:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(7,8,15,1) 40%, rgba(7,8,15,0.55) 72%, rgba(7,8,15,0.1) 100%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #07080F)" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-6">
               Get in Touch
@@ -43,18 +64,15 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-t border-border pt-16 md:pt-20">
             <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-24">
-              {/* Left — Form */}
               <div>
                 <ScrollReveal>
                   <ContactForm />
                 </ScrollReveal>
               </div>
 
-              {/* Right — Contact details */}
               <div>
                 <ScrollReveal delay={0.1}>
                   <div className="lg:sticky lg:top-28 space-y-0">
-                    {/* Email */}
                     <div className="py-6 border-b border-border">
                       <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
                         Email
@@ -70,7 +88,6 @@ export default function ContactPage() {
                       </a>
                     </div>
 
-                    {/* LinkedIn */}
                     <div className="py-6 border-b border-border">
                       <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
                         LinkedIn
@@ -88,20 +105,19 @@ export default function ContactPage() {
                       </a>
                     </div>
 
-                    {/* Location */}
                     <div className="py-6 border-b border-border">
                       <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
                         Location
                       </p>
-                      <p className="text-fg font-medium">
-                        Harare, Zimbabwe
-                      </p>
+                      <p className="text-fg font-medium">Harare, Zimbabwe</p>
                       <p className="font-mono text-[11px] text-fg-subtle mt-1">
+                        17.83°S · 31.05°E
+                      </p>
+                      <p className="font-mono text-[11px] text-fg-subtle/60 mt-0.5">
                         Available for remote work globally
                       </p>
                     </div>
 
-                    {/* Response */}
                     <div className="py-6 border-b border-border">
                       <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-2">
                         Response Time
@@ -111,13 +127,10 @@ export default function ContactPage() {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success/60" />
                           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
                         </span>
-                        <p className="text-fg font-medium">
-                          Within 48 hours
-                        </p>
+                        <p className="text-fg font-medium">Within 48 hours</p>
                       </div>
                     </div>
 
-                    {/* Engagement types */}
                     <div className="py-6">
                       <p className="font-mono text-[11px] text-fg-subtle tracking-[0.15em] uppercase mb-3">
                         Engagement Types

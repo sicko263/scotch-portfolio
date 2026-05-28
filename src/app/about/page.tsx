@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ScrollReveal from "@/components/ScrollReveal"
+import HeroGlobe from "@/components/three/HeroGlobeWrapper"
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,11 +23,26 @@ const milestones = [
 export default function AboutPage() {
   return (
     <div className="pt-24 pb-16">
-      {/* ─── HEADER ──────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      {/* ─── HEADER with mini globe ──────────────────── */}
+      <section className="relative max-w-7xl mx-auto px-6 pb-16 overflow-hidden">
+        {/* Decorative globe top-right */}
+        <div
+          className="absolute pointer-events-none hidden md:block"
+          style={{ top: "-60px", right: "-20px", width: "380px", height: "380px", opacity: 0.5 }}
+        >
+          <HeroGlobe />
+        </div>
+        <div
+          className="absolute inset-0 pointer-events-none hidden md:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(7,8,15,1) 45%, rgba(7,8,15,0.5) 75%, transparent 100%)",
+          }}
+        />
+
         <ScrollReveal>
-          <p className="font-mono text-xs text-fg-subtle tracking-wider uppercase mb-4">About</p>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-fg tracking-tight leading-[1.1] max-w-3xl">
+          <p className="relative z-10 font-mono text-xs text-fg-subtle tracking-wider uppercase mb-4">About</p>
+          <h1 className="relative z-10 font-display font-bold text-4xl md:text-5xl text-fg tracking-tight leading-[1.1] max-w-3xl">
             I build the spatial systems that
             <br />
             <span className="gradient-text">map reality</span> for institutions.
@@ -37,7 +53,6 @@ export default function AboutPage() {
       {/* ─── STORY ───────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Main story */}
           <div className="lg:col-span-3 space-y-6">
             <ScrollReveal>
               <p className="text-fg-muted leading-[1.75] text-base">
@@ -85,7 +100,6 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
 
-          {/* Sidebar — credentials */}
           <div className="lg:col-span-2 space-y-8">
             <ScrollReveal delay={0.1}>
               <div className="bg-surface border border-border rounded-[20px] p-6 space-y-4">

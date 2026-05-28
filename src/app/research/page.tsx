@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import ScrollReveal from "@/components/ScrollReveal"
+import DataNetwork from "@/components/three/DataNetworkWrapper"
 
 export const metadata: Metadata = {
   title: "Research",
@@ -72,9 +73,29 @@ const researchAreas = [
 export default function ResearchPage() {
   return (
     <>
-      {/* ─── HEADER ── Dark section ──────────────────────── */}
-      <section className="pt-32 md:pt-40 pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ─── HEADER ── Dark section with 3D network ───────── */}
+      <section className="relative pt-32 md:pt-40 pb-20 overflow-hidden">
+        {/* 3D Data Network */}
+        <div
+          className="absolute pointer-events-none"
+          style={{ top: "0", right: "-40px", width: "620px", height: "500px", opacity: 0.6 }}
+        >
+          <DataNetwork />
+        </div>
+
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(7,8,15,1) 38%, rgba(7,8,15,0.45) 68%, rgba(7,8,15,0.1) 100%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #07080F)" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <p className="font-mono text-[11px] text-electric tracking-[0.2em] uppercase mb-6">
               Research
@@ -105,7 +126,6 @@ export default function ResearchPage() {
                     : ""
                 }`}
               >
-                {/* Meta line */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-sm text-violet font-medium">
@@ -118,21 +138,17 @@ export default function ResearchPage() {
                   </div>
                 </div>
 
-                {/* Title */}
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-fg-on-light tracking-tight leading-tight mb-6">
                   {area.title}
                 </h2>
 
-                {/* Pull quote */}
                 <blockquote className="border-l-2 border-violet/40 pl-5 mb-10">
                   <p className="text-fg-muted-on-light text-sm italic leading-relaxed max-w-3xl">
                     {area.quote}
                   </p>
                 </blockquote>
 
-                {/* Details: two columns */}
                 <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16">
-                  {/* Left — what I'm exploring */}
                   <div className="space-y-3">
                     <p className="font-mono text-[11px] text-fg-muted-on-light tracking-wider uppercase">
                       What I&apos;m Exploring
@@ -150,7 +166,6 @@ export default function ResearchPage() {
                     </ul>
                   </div>
 
-                  {/* Right — tools + output */}
                   <div className="space-y-8">
                     <div className="space-y-3">
                       <p className="font-mono text-[11px] text-fg-muted-on-light tracking-wider uppercase">
@@ -203,7 +218,8 @@ export default function ResearchPage() {
                 <Link
                   href="/contact"
                   className="inline-block bg-amber text-black font-display font-bold text-sm px-8 py-4 rounded-full
-                    hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+                    hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200
+                    shadow-[0_0_24px_rgba(255,159,10,0.25)]"
                 >
                   Get in Touch
                 </Link>
