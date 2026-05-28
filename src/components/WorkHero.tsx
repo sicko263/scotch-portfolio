@@ -8,7 +8,7 @@ const TerrainScene = dynamic(() => import("./three/TerrainScene"), { ssr: false 
 const ease = [0, 0, 0.2, 1] as const
 
 const stats = [
-  { value: "6", label: "Systems Built" },
+  { value: "15+", label: "Production Systems Built" },
   { value: "5+", label: "Years" },
   { value: "8", label: "Countries" },
   { value: "Live", label: "In Production" },
