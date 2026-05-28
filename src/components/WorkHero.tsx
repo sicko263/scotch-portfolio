@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic"
 import { motion } from "motion/react"
 
-const HeroGlobe = dynamic(() => import("./three/HeroGlobe"), { ssr: false })
+const TerrainScene = dynamic(() => import("./three/TerrainScene"), { ssr: false })
 
 const ease = [0, 0, 0.2, 1] as const
 
@@ -17,9 +17,9 @@ const stats = [
 export default function WorkHero() {
   return (
     <section className="relative pt-32 pb-12 md:pt-44 md:pb-20 overflow-hidden">
-      {/* ─── Globe — full background ── */}
+      {/* ─── 3D Terrain — full background ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <HeroGlobe />
+        <TerrainScene />
       </div>
 
       {/* Left-side vignette keeps text readable */}
@@ -27,7 +27,7 @@ export default function WorkHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 100% at 70% 50%, transparent 20%, rgba(7,8,15,0.6) 55%, rgba(7,8,15,0.95) 100%)",
+            "linear-gradient(to right, rgba(7,8,15,0.92) 0%, rgba(7,8,15,0.65) 40%, rgba(7,8,15,0.15) 80%, rgba(7,8,15,0) 100%)",
         }}
       />
       {/* Bottom fade into page */}

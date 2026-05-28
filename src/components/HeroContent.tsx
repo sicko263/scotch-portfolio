@@ -4,7 +4,7 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { motion } from "motion/react"
 
-const TerrainScene = dynamic(() => import("./three/TerrainScene"), { ssr: false })
+const HeroGlobe = dynamic(() => import("./three/HeroGlobe"), { ssr: false })
 
 const ease = [0, 0, 0.2, 1] as const
 
@@ -12,9 +12,9 @@ export default function HeroContent() {
   return (
     <section className="relative min-h-[85svh] flex flex-col items-center justify-center pt-20 pb-8 overflow-hidden">
 
-      {/* ─── 3D Terrain canvas — full section background ── */}
+      {/* ─── 3D Globe canvas — full section background ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <TerrainScene />
+        <HeroGlobe />
       </div>
 
       {/* Depth vignette — keeps text readable */}
@@ -22,7 +22,7 @@ export default function HeroContent() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 75% at 50% 50%, rgba(7,8,15,0.35) 0%, rgba(7,8,15,0.7) 60%, rgba(7,8,15,0.95) 100%)",
+            "radial-gradient(ellipse 55% 70% at 50% 50%, transparent 30%, rgba(7,8,15,0.65) 70%, rgba(7,8,15,0.9) 100%)",
         }}
       />
 
