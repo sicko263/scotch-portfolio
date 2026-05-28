@@ -19,8 +19,8 @@ export default function WorkHero() {
     <section className="relative pt-32 pb-12 md:pt-44 md:pb-20 overflow-hidden">
       {/* ─── 3D Terrain ── */}
       <div
-        className="absolute pointer-events-none"
-        style={{ top: "-60px", right: "-60px", width: "600px", height: "520px", opacity: 0.65 }}
+        className="absolute pointer-events-none hidden md:block"
+        style={{ top: "-60px", right: "-60px", width: "min(600px, 55vw)", height: "520px", opacity: 0.65 }}
       >
         <TerrainScene />
       </div>

@@ -90,8 +90,8 @@ export default function ServicesPage() {
       <section className="relative pt-32 md:pt-40 pb-20 overflow-hidden">
         {/* 3D Spatial Grid */}
         <div
-          className="absolute pointer-events-none"
-          style={{ bottom: "-80px", right: "-80px", width: "580px", height: "480px", opacity: 0.7 }}
+          className="absolute pointer-events-none hidden md:block"
+          style={{ bottom: "-80px", right: "-80px", width: "min(580px, 55vw)", height: "480px", opacity: 0.7 }}
         >
           <SpatialGrid />
         </div>

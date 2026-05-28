@@ -12,61 +12,75 @@ export const metadata: Metadata = {
 const researchAreas = [
   {
     number: "01",
-    title: "Drone Photogrammetry & GIS Integration",
+    title: "Drone AI Models & Computer Vision",
     status: "Active Research",
     quote:
-      "Drones generate more spatial data in a single flight than a field team collects in weeks. The bottleneck isn't capture — it's processing, structuring, and making that data queryable in a GIS environment.",
+      "A drone is a data capture machine. The intelligence has to come after the flight — in the models that can look at raw imagery and extract buildings, boundaries, land cover, and change without a human reviewing every frame.",
     exploring: [
-      "Drone-to-GIS pipeline design: raw imagery → point clouds → orthomosaics → PostGIS layers",
-      "Informal settlement mapping with low-cost drone imagery",
-      "Agricultural land assessment and post-flood damage analysis in Zimbabwe",
-      "Large-scale drone image processing and post-flight data capture (Senlis Consultancy experience)",
+      "Training object detection models on drone orthomosaics for automated feature extraction",
+      "Semantic segmentation of informal settlements: building footprints, roads, vegetation",
+      "Change detection between multi-temporal drone surveys using CNN architectures",
+      "Drone-to-GIS pipeline design: raw imagery → point clouds → classified PostGIS layers",
+      "Low-cost drone photogrammetry for post-flood damage assessment in Zimbabwe",
     ],
     tools: [
+      "YOLOv8 / Ultralytics",
+      "TensorFlow / Keras",
       "OpenDroneMap (ODM)",
       "WebODM",
       "QGIS Photogrammetry Plugins",
-      "CAAZ Certification (planned)",
+      "CAAZ Certification (in progress)",
     ],
     output:
-      "Mapping Informal Settlements in Harare Using Low-Cost Drone Imagery and Open-Source GIS",
+      "Automated Building Footprint Extraction from Drone Orthomosaics Using Semantic Segmentation — Harare Informal Settlements",
   },
   {
     number: "02",
-    title: "AI-Powered Spatial Analysis",
+    title: "GeoAI & Spatial Machine Learning",
     status: "Active Research",
     quote:
-      "The next leap in GIS isn't about better maps. It's about maps that think — detecting patterns, classifying land use, flagging anomalies without a human reviewing every pixel.",
+      "Geography is the hidden variable in almost every machine learning problem. GeoAI is what happens when you stop treating location as just a feature column and start baking spatial relationships directly into the model architecture.",
     exploring: [
-      "Spatial machine learning: land use classification from satellite and drone imagery",
-      "Detecting illegal mining activity from aerial imagery",
-      "Crop stress detection for smallholder farmers",
-      "Automated property boundary extraction from drone orthomosaics",
+      "Spatially-aware ML: integrating spatial autocorrelation and topology into model training",
+      "Land use / land cover classification from Sentinel-2 multispectral imagery",
+      "Illegal artisanal mining detection from multi-temporal satellite imagery in southern Africa",
+      "Crop stress and yield prediction for smallholder farmers using NDVI time-series",
+      "Spatial prediction models for property valuation in markets with sparse ground-truth data",
     ],
     tools: [
-      "Python (scikit-learn, TensorFlow)",
-      "QGIS ML Plugins",
+      "Python (scikit-learn, TensorFlow, PyTorch)",
       "Google Earth Engine",
-      "ESA Copernicus",
+      "ESA Copernicus / Sentinel Hub",
       "NASA ARSET",
+      "QGIS ML Plugins",
+      "PostGIS spatial joins",
     ],
     output:
-      "Land Use Classification Model for Peri-Urban Zimbabwe Using Sentinel-2 Imagery",
+      "Land Use Classification Model for Peri-Urban Zimbabwe Using Sentinel-2 Imagery and Spatial CV",
   },
   {
     number: "03",
-    title: "Spatial Data Infrastructure for Developing Economies",
+    title: "Digital Twins & Spatial Simulation",
     status: "Active Research",
     quote:
-      "Most SDI frameworks were designed for countries with functioning address systems and complete cadastral records. They don't account for informal settlements, communal land, or institutions with no digitization budget. I'm interested in what SDI looks like when you start from scratch.",
+      "A digital twin isn't a 3D model of a city — it's a living, queryable replica that ingests real-world sensor data, simulates scenarios, and surfaces decisions. For developing economies where physical infrastructure is under-instrumented, building that twin from drone data and community surveys is the challenge.",
     exploring: [
-      "GeoNode as an open-source SDI platform",
-      "OGC standards implementation for low-resource environments",
-      "Community mapping methodologies (OSM + field data collection)",
-      "Case studies: Rwanda SDI, Kenya's Ardhi platform, Ethiopia's LAIS",
+      "Urban digital twin architectures for African cities: data sources, update cadence, and governance",
+      "Integrating drone surveys, OSM data, and IoT sensors into a unified spatial twin",
+      "Flood simulation and infrastructure risk modelling using digital elevation models from drone data",
+      "Land administration digital twins: linking cadastral, valuation, and infrastructure layers",
+      "Real-time spatial data pipelines: drone imagery → cloud processing → live GIS layers",
     ],
-    tools: ["GeoNode", "GeoServer", "OGC Standards", "OpenStreetMap"],
-    output: null,
+    tools: [
+      "CesiumJS / 3D Tiles",
+      "PostGIS + TimescaleDB",
+      "OpenDroneMap",
+      "QGIS 3D",
+      "GeoNode",
+      "OGC SensorThings API",
+    ],
+    output:
+      "Digital Twin Framework for Urban Land Administration in Sub-Saharan Africa: A Harare Case Study",
   },
 ]
 
@@ -77,8 +91,8 @@ export default function ResearchPage() {
       <section className="relative pt-32 md:pt-40 pb-20 overflow-hidden">
         {/* 3D Data Network */}
         <div
-          className="absolute pointer-events-none"
-          style={{ top: "0", right: "-40px", width: "620px", height: "500px", opacity: 0.6 }}
+          className="absolute pointer-events-none hidden md:block"
+          style={{ top: "0", right: "-40px", width: "min(620px, 55vw)", height: "500px", opacity: 0.6 }}
         >
           <DataNetwork />
         </div>

@@ -41,7 +41,7 @@ export default function HeroContent() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="font-mono text-[10px] md:text-[11px] text-fg-subtle tracking-[0.25em] uppercase mb-6 md:mb-10"
+          className="font-mono text-[10px] md:text-[11px] text-electric tracking-[0.25em] uppercase mb-6 md:mb-10"
         >
           GIS Systems Architect · Zimbabwe & Beyond
         </motion.p>
