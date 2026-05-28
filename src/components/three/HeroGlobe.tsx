@@ -33,14 +33,14 @@ function orbitPos(angle: number, radius: number, inc: number, raan: number): THR
 // ── Constellation definitions ──────────────────────────────────────
 const CONSTELLATIONS = [
   // GPS MEO – 3 planes, 55° inclination, ~20,000 km equiv
-  { inc: 55 * DEG, raan: 0,          radius: 3.6, speed: 0.28, count: 4, phase: 0,    trackColor: "#06D6F0" },
-  { inc: 55 * DEG, raan: 60  * DEG,  radius: 3.6, speed: 0.28, count: 4, phase: 1.57, trackColor: "#06D6F0" },
-  { inc: 55 * DEG, raan: 120 * DEG,  radius: 3.6, speed: 0.28, count: 4, phase: 3.14, trackColor: "#06D6F0" },
+  { inc: 55 * DEG, raan: 0,          radius: 3.6, speed: 0.09, count: 4, phase: 0,    trackColor: "#06D6F0" },
+  { inc: 55 * DEG, raan: 60  * DEG,  radius: 3.6, speed: 0.09, count: 4, phase: 1.57, trackColor: "#06D6F0" },
+  { inc: 55 * DEG, raan: 120 * DEG,  radius: 3.6, speed: 0.09, count: 4, phase: 3.14, trackColor: "#06D6F0" },
   // Sun-synchronous polar – Earth observation
-  { inc: 92 * DEG, raan: 25  * DEG,  radius: 2.9, speed: 0.52, count: 3, phase: 0,    trackColor: "#7C3AFF" },
-  { inc: 92 * DEG, raan: 115 * DEG,  radius: 2.9, speed: 0.52, count: 3, phase: 2.09, trackColor: "#7C3AFF" },
+  { inc: 92 * DEG, raan: 25  * DEG,  radius: 2.9, speed: 0.18, count: 3, phase: 0,    trackColor: "#7C3AFF" },
+  { inc: 92 * DEG, raan: 115 * DEG,  radius: 2.9, speed: 0.18, count: 3, phase: 2.09, trackColor: "#7C3AFF" },
   // GEO belt – communications / weather
-  { inc: 1  * DEG, raan: 0,          radius: 4.4, speed: 0.09, count: 6, phase: 0,    trackColor: "#FF9F0A" },
+  { inc: 1  * DEG, raan: 0,          radius: 4.4, speed: 0.03, count: 6, phase: 0,    trackColor: "#FF9F0A" },
 ]
 
 // ── Single satellite model ──────────────────────────────────────────
