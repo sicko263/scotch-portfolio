@@ -43,7 +43,7 @@ export default function HeroContent() {
           transition={{ duration: 0.6, ease }}
           className="font-mono text-[10px] md:text-[11px] text-electric tracking-[0.25em] uppercase mb-6 md:mb-10"
         >
-          GIS Systems Architect · Zimbabwe & Beyond
+          GIS Systems Developer · Zimbabwe & Beyond
         </motion.p>
 
         {/* Main display headline */}
