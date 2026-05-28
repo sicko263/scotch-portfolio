@@ -91,7 +91,7 @@ export default function ServicesPage() {
         {/* 3D Spatial Grid */}
         <div
           className="absolute pointer-events-none hidden md:block"
-          style={{ bottom: "-80px", right: "-80px", width: "min(580px, 55vw)", height: "480px", opacity: 0.7 }}
+          style={{ bottom: "-80px", right: "-80px", width: "min(580px, 55vw)", height: "480px", opacity: 1 }}
         >
           <SpatialGrid />
         </div>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, rgba(7,8,15,1) 40%, rgba(7,8,15,0.5) 70%, rgba(7,8,15,0.15) 100%)",
+              "linear-gradient(to right, rgba(7,8,15,1) 25%, rgba(7,8,15,0.3) 58%, rgba(7,8,15,0) 100%)",
           }}
         />
         <div

@@ -61,7 +61,7 @@ function Terrain() {
       const v = (((t.current * 0.35) % 1) * 10) - 5
       scanRef.current.position.z = v
       ;(scanRef.current.material as THREE.MeshBasicMaterial).opacity =
-        0.08 + Math.abs(Math.sin(t.current * 1.2)) * 0.1
+        0.2 + Math.abs(Math.sin(t.current * 1.2)) * 0.25
     }
   })
 
@@ -74,13 +74,13 @@ function Terrain() {
 
       {/* Violet wireframe overlay */}
       <mesh geometry={wireGeo}>
-        <meshBasicMaterial wireframe color="#7C3AFF" transparent opacity={0.28} />
+        <meshBasicMaterial wireframe color="#7C3AFF" transparent opacity={0.65} />
       </mesh>
 
       {/* Electric scan plane */}
       <mesh ref={scanRef} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.02, 0]}>
         <planeGeometry args={[10, 0.5]} />
-        <meshBasicMaterial color="#06D6F0" transparent opacity={0.12} side={THREE.DoubleSide} />
+        <meshBasicMaterial color="#06D6F0" transparent opacity={0.3} side={THREE.DoubleSide} />
       </mesh>
 
       {/* Data pins */}

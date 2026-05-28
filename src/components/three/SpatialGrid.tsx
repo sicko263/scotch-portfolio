@@ -84,12 +84,12 @@ function Grid() {
     <group ref={groupRef} rotation={[-1.1, 0.2, 0.1]}>
       {/* Base grid */}
       <lineSegments geometry={gridGeo}>
-        <lineBasicMaterial color="#7C3AFF" transparent opacity={0.14} />
+        <lineBasicMaterial color="#7C3AFF" transparent opacity={0.55} />
       </lineSegments>
 
       {/* Bright center axes */}
       <lineSegments geometry={axisGeo}>
-        <lineBasicMaterial color="#06D6F0" transparent opacity={0.5} />
+        <lineBasicMaterial color="#06D6F0" transparent opacity={0.9} />
       </lineSegments>
 
       {/* Data pins */}

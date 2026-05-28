@@ -20,7 +20,7 @@ export default function WorkHero() {
       {/* ─── 3D Terrain ── */}
       <div
         className="absolute pointer-events-none hidden md:block"
-        style={{ top: "-60px", right: "-60px", width: "min(600px, 55vw)", height: "520px", opacity: 0.65 }}
+        style={{ top: "-60px", right: "-60px", width: "min(600px, 55vw)", height: "520px", opacity: 1 }}
       >
         <TerrainScene />
       </div>
@@ -30,7 +30,7 @@ export default function WorkHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(7,8,15,1) 35%, rgba(7,8,15,0.4) 65%, rgba(7,8,15,0.1) 100%)",
+            "linear-gradient(to right, rgba(7,8,15,1) 22%, rgba(7,8,15,0.3) 55%, rgba(7,8,15,0) 100%)",
         }}
       />
       <div

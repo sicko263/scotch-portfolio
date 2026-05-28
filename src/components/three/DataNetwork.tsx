@@ -94,7 +94,7 @@ function Network() {
     <group ref={groupRef}>
       {/* Edges */}
       <lineSegments geometry={edgeGeo}>
-        <lineBasicMaterial color="#7C3AFF" transparent opacity={0.18} />
+        <lineBasicMaterial color="#7C3AFF" transparent opacity={0.55} />
       </lineSegments>
 
       {/* Node dots — electric */}

@@ -92,7 +92,7 @@ export default function ResearchPage() {
         {/* 3D Data Network */}
         <div
           className="absolute pointer-events-none hidden md:block"
-          style={{ top: "0", right: "-40px", width: "min(620px, 55vw)", height: "500px", opacity: 0.6 }}
+          style={{ top: "0", right: "-40px", width: "min(620px, 55vw)", height: "500px", opacity: 1 }}
         >
           <DataNetwork />
         </div>
@@ -101,7 +101,7 @@ export default function ResearchPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, rgba(7,8,15,1) 38%, rgba(7,8,15,0.45) 68%, rgba(7,8,15,0.1) 100%)",
+              "linear-gradient(to right, rgba(7,8,15,1) 25%, rgba(7,8,15,0.3) 58%, rgba(7,8,15,0) 100%)",
           }}
         />
         <div
